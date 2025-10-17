@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chúc Mừng 20/10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            font-family: 'Dancing Script', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            overflow: hidden;
+            position: relative;
+            touch-action: manipulation;
+        }
+
+        /* Background với hình hoa tulip */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-chic-abstract-pink-tulip-in-3d-minimalistic-style-perfect-for-spring-image_3605243.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: backgroundZoom 20s infinite alternate ease-in-out;
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(255, 240, 245, 0.4) 0%, 
+                rgba(255, 228, 230, 0.6) 50%, 
+                rgba(255, 215, 220, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: floatParticle 15s infinite linear;
+        }
+
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+            animation-duration: 20s;
+        }
+
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 30%;
+            left: 80%;
+            animation-delay: 2s;
+            animation-duration: 25s;
+        }
+
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            top: 70%;
+            left: 10%;
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+
+        .particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            top: 50%;
+            left: 90%;
+            animation-delay: 6s;
+            animation-duration: 22s;
+        }
+
+        .particle:nth-child(5) {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 60%;
+            animation-delay: 8s;
+            animation-duration: 19s;
+        }
+
+        @keyframes backgroundZoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #d81b60;
+            margin-bottom: clamp(25px, 4vw, 40px);
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+            font-weight: 700;
+            background: rgba(255,255,255,0.9);
+            padding: clamp(12px, 2vw, 20px) clamp(20px, 4vw, 40px);
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            line-height: 1.2;
+            backdrop-filter: blur(8px);
+            animation: titleFloat 6s infinite ease-in-out;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .envelope-wrapper {
+            position: relative;
+            width: clamp(350px, 70vw, 600px);
+            height: clamp(250px, 50vw, 420px);
+            margin: clamp(30px, 6vw, 60px) auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+            filter: drop-shadow(0 12px 30px rgba(0,0,0,0.2));
+            z-index: 10;
+            -webkit-user-select: none;
+            user-select: none;
+            animation: envelopeFloat 8s infinite ease-in-out;
+        }
+
+        @keyframes envelopeFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(0.8deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-3px) rotate(-0.5deg); }
+        }
+        
+        .envelope-wrapper:active {
+            transform: scale(0.98);
+        }
+        
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #f8bbd0, #f48fb1);
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 2;
+        }
+        
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%);
+            z-index: 1;
+        }
+        
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #f06292, #ec407a);
+            clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+            transform-origin: top;
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 3;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .flap:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%);
+        }
+        
+        .body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            background: linear-gradient(145deg, #f8bbd0, #f48fb1);
+            border-radius: 0 0 12px 12px;
+            z-index: 2;
+            box-shadow: inset 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .envelope-wrapper.open .flap {
+            transform: rotateX(180deg);
+        }
+        
+        .letter {
+            position: absolute;
+            width: 92%;
+            height: clamp(200px, 45vw, 350px);
+            background: linear-gradient(to bottom, #fff9c4, #fffde7);
+            border-radius: 8px;
+            padding: clamp(20px, 4vw, 35px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            z-index: 1;
+            top: 15px;
+            left: 4%;
+            transform: translateY(0);
+            transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+            overflow-y: auto;
+            text-align: left;
+            border: 2px solid #f8bbd0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .envelope-wrapper.open .letter {
+            transform: translateY(-200px);
+        }
+        
+        .letter-content {
+            color: #880e4f;
+            line-height: 1.6;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        }
+        
+        .letter-content h2 {
+            text-align: center;
+            margin-bottom: clamp(15px, 3vw, 25px);
+            color: #d81b60;
+            border-bottom: 2px dashed #f8bbd0;
+            padding-bottom: clamp(10px, 2vw, 15px);
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+        
+        .letter-content p {
+            margin-bottom: clamp(12px, 2vw, 18px);
+            text-align: justify;
+        }
+        
+        .heart {
+            position: absolute;
+            color: #ff4081;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            z-index: 4;
+            opacity: 0;
+            transition: opacity 0.5s;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+            pointer-events: none;
+        }
+        
+        .envelope-wrapper.open .heart {
+            opacity: 1;
+        }
+        
+        .heart-1 {
+            top: 25px;
+            left: 60px;
+            animation: float 4s infinite ease-in-out;
+        }
+        
+        .heart-2 {
+            top: 45px;
+            right: 80px;
+            animation: float 4s infinite ease-in-out 0.7s;
+        }
+        
+        .heart-3 {
+            bottom: 35px;
+            left: 85px;
+            animation: float 4s infinite ease-in-out 1.4s;
+        }
+        
+        .instruction {
+            margin-top: clamp(25px, 6vw, 50px);
+            color: #880e4f;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            background: rgba(255,255,255,0.85);
+            padding: clamp(12px, 2vw, 18px) clamp(20px, 4vw, 35px);
+            border-radius: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            line-height: 1.4;
+            animation: instructionPulse 4s infinite ease-in-out;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        @keyframes instructionPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .flowers {
+            display: flex;
+            justify-content: center;
+            margin-top: clamp(25px, 6vw, 50px);
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            color: #ff4081;
+            gap: clamp(15px, 4vw, 30px);
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+        }
+        
+        .flower {
+            animation: float 5s infinite ease-in-out;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        }
+        
+        .flower:nth-child(2) { animation-delay: 0.8s; }
+        .flower:nth-child(3) { animation-delay: 1.6s; }
+        .flower:nth-child(4) { animation-delay: 2.4s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        /* Scrollbar styling */
+        .letter::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .letter::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .letter::-webkit-scrollbar-thumb {
+            background: #f48fb1;
+            border-radius: 10px;
+        }
+        
+        .letter::-webkit-scrollbar-thumb:hover {
+            background: #f06292;
+        }
+        
+        .seal {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: clamp(45px, 8vw, 70px);
+            height: clamp(45px, 8vw, 70px);
+            background: linear-gradient(145deg, #f06292, #ec407a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 4;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .envelope-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.3) 2px, transparent 2px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+        
+        .letter-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, transparent 95%, #f8bbd0 95%),
+                linear-gradient(0deg, transparent 95%, #f8bbd0 95%);
+            background-size: 25px 25px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: clamp(15px, 3vw, 25px);
+            font-style: italic;
+            font-weight: bold;
+            color: #d81b60;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        }
+        
+        /* Tối ưu cho iPhone notch */
+        @supports (padding: max(0px)) {
+            .container {
+                padding-left: max(20px, env(safe-area-inset-left));
+                padding-right: max(20px, env(safe-area-inset-right));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+        }
+        
+        /* Desktop - phong thư to hơn */
+        @media (min-width: 768px) {
+            .envelope-wrapper {
+                width: clamp(500px, 50vw, 700px);
+                height: clamp(350px, 35vw, 490px);
+            }
+            
+            .letter {
+                height: clamp(280px, 32vw, 400px);
+                padding: clamp(25px, 3vw, 40px);
+            }
+            
+            .envelope-wrapper.open .letter {
+                transform: translateY(-250px);
+            }
+            
+            .heart {
+                font-size: clamp(2.5rem, 3vw, 4rem);
+            }
+        }
+        
+        /* Landscape mode */
+        @media (max-height: 600px) and (orientation: landscape) {
+            body {
+                padding: 10px;
+                justify-content: flex-start;
+            }
+            
+            .container {
+                transform: scale(0.9);
+                padding-top: 10px;
+            }
+            
+            .instruction {
+                margin-top: 20px;
+            }
+        }
+        
+        /* iPhone màn hình nhỏ hơn */
+        @media (max-width: 350px) {
+            .envelope-wrapper {
+                width: 300px;
+                height: 210px;
+            }
+            
+            .letter {
+                height: 170px;
+                padding: 15px;
+            }
+            
+            .envelope-wrapper.open .letter {
+                transform: translateY(-150px);
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background với hình hoa tulip 3D -->
+    <div class="background">
+        <div class="background-image"></div>
+        <div class="background-overlay"></div>
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</h1>
+        
+        <div class="envelope-wrapper" id="envelopeWrapper">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="body"></div>
+                <div class="envelope-pattern"></div>
+                <div class="seal">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            
+            <div class="letter">
+                <div class="letter-pattern"></div>
+                <div class="letter-content">
+                    <h2>Gửi em!</h2>
+                    <p>Nhân ngày 20/10, chúc em luôn xinh đẹp, vui vẻ và gặp nhiều may mắn trong cuộc sống.
+Mong em luôn giữ được nụ cười tươi và tinh thần tích cực như bây giờ nhé !
+Chúc em có một ngày thật đặc biệt và ý nghĩa 🌸</p>
+                    <div class="signature">Thân mến!!!</div>
+                </div>
+            </div>
+            
+            <div class="heart heart-1">🌸💐</div>
+            <div class="heart heart-2">💐🌸</div>
+            <div class="heart heart-3">🌸💐</div>
+        </div>
+        
+        <p class="instruction">Chạm vào phong thư để mở thiệp</p>
+        
+        <div class="flowers">
+            <div class="flower">🌹</div>
+            <div class="flower">🌸</div>
+            <div class="flower">🌺</div>
+            <div class="flower">💐</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('envelopeWrapper').addEventListener('click', function() {
+            this.classList.toggle('open');
+            
+            // Đổi hướng dẫn sau khi mở thiệp
+            const instruction = document.querySelector('.instruction');
+            if (this.classList.contains('open')) {
+                instruction.textContent = 'Chạm vào phong thư để đóng thiệp';
+                instruction.style.background = 'rgba(248, 187, 208, 0.9)';
+            } else {
+                instruction.textContent = 'Chạm vào phong thư để mở thiệp';
+                instruction.style.background = 'rgba(255,255,255,0.85)';
+            }
+        });
+        
+        // Ngăn zoom double tap trên mobile
+        document.addEventListener('dblclick', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+    </script>
+</body>
+</html>
