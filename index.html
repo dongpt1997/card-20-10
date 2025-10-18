@@ -162,7 +162,7 @@
             position: relative;
             z-index: 10;
             padding: 20px;
-            padding-top:210px;
+            padding-top:160px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -315,6 +315,7 @@
             color: #880e4f;
             line-height: 1.6;
             font-size: clamp(1rem, 2.5vw, 1.4rem);
+            padding-bottom: 20px;
         }
         
         .letter-content h2 {
@@ -420,7 +421,7 @@
         
         /* Scrollbar styling */
         .letter::-webkit-scrollbar {
-            width: 8px;
+            width: none;
         }
         
         .letter::-webkit-scrollbar-track {
@@ -640,6 +641,21 @@
         .envelope-open .flowers {
             transform: translateY(-100px);
         }
+        .Nhung{
+            display: flex;
+            background-color: none;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .Nhung img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -675,11 +691,13 @@
             <div class="letter">
                 <div class="letter-pattern"></div>
                 <div class="letter-content">
-                    <h2>Gửi em!</h2>
-                    <p>Nhân ngày 20/10, chúc em luôn xinh đẹp, vui vẻ và gặp nhiều may mắn trong cuộc sống.
-Mong em luôn giữ được nụ cười tươi và tinh thần tích cực như bây giờ nhé !
-Chúc em có một ngày thật đặc biệt và ý nghĩa 🌸</p>
-                    <div class="signature">Thân mến!!!</div>
+                    <div class="Nhung">
+                        <h1>gửi Nhung</h1>
+                        <img src="./image/img.png" alt="">
+                    </div>
+                    <p style="font-size: 20px;">Chúc em 20/10 vui nhé ! 
+Không cần hoa, không cần quà, chỉ cần ngủ đủ giấc, ăn thật ngon và đừng cáu với đời là thành công rồi ! 😆😆😆</p>
+                    <div class="signature" style="font-size: 20px;">Thân mến!!!</div>
                 </div>
             </div>
             
