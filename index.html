@@ -162,11 +162,24 @@
             position: relative;
             z-index: 10;
             padding: 20px;
+            padding-top:210px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        
+        .title-container {
+            position: relative;
+            z-index: 20;
+            transition: all 0.8s ease;
+            margin-bottom: clamp(25px, 4vw, 40px);
+            margin-top: 20px;
         }
         
         h1 {
             color: #d81b60;
-            margin-bottom: clamp(25px, 4vw, 40px);
             font-size: clamp(2.2rem, 6vw, 4rem);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
             font-weight: 700;
@@ -179,6 +192,9 @@
             backdrop-filter: blur(8px);
             animation: titleFloat 6s infinite ease-in-out;
             border: 2px solid rgba(255,255,255,0.5);
+            text-align: center;
+            max-width: 95%;
+            transition: all 0.8s ease;
         }
 
         @keyframes titleFloat {
@@ -188,8 +204,8 @@
         
         .envelope-wrapper {
             position: relative;
-            width: clamp(350px, 70vw, 600px);
-            height: clamp(250px, 50vw, 420px);
+            width: clamp(280px, 70vw, 600px);
+            height: clamp(200px, 50vw, 420px);
             margin: clamp(30px, 6vw, 60px) auto;
             cursor: pointer;
             transition: transform 0.3s;
@@ -275,10 +291,10 @@
         .letter {
             position: absolute;
             width: 92%;
-            height: clamp(200px, 45vw, 350px);
+            height: clamp(180px, 45vw, 350px);
             background: linear-gradient(to bottom, #fff9c4, #fffde7);
             border-radius: 8px;
-            padding: clamp(20px, 4vw, 35px);
+            padding: clamp(15px, 4vw, 35px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             z-index: 1;
             top: 15px;
@@ -292,13 +308,13 @@
         }
         
         .envelope-wrapper.open .letter {
-            transform: translateY(-200px);
+            transform: translateY(-180px);
         }
         
         .letter-content {
             color: #880e4f;
             line-height: 1.6;
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
         }
         
         .letter-content h2 {
@@ -308,7 +324,7 @@
             border-bottom: 2px dashed #f8bbd0;
             padding-bottom: clamp(10px, 2vw, 15px);
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
         }
         
         .letter-content p {
@@ -319,7 +335,7 @@
         .heart {
             position: absolute;
             color: #ff4081;
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: clamp(1.5rem, 4vw, 3rem);
             z-index: 4;
             opacity: 0;
             transition: opacity 0.5s;
@@ -332,20 +348,20 @@
         }
         
         .heart-1 {
-            top: 25px;
-            left: 60px;
+            top: 15px;
+            left: 40px;
             animation: float 4s infinite ease-in-out;
         }
         
         .heart-2 {
-            top: 45px;
-            right: 80px;
+            top: 30px;
+            right: 50px;
             animation: float 4s infinite ease-in-out 0.7s;
         }
         
         .heart-3 {
-            bottom: 35px;
-            left: 85px;
+            bottom: 25px;
+            left: 60px;
             animation: float 4s infinite ease-in-out 1.4s;
         }
         
@@ -353,7 +369,7 @@
             margin-top: clamp(25px, 6vw, 50px);
             color: #880e4f;
             font-weight: 600;
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
             background: rgba(255,255,255,0.85);
             padding: clamp(12px, 2vw, 18px) clamp(20px, 4vw, 35px);
             border-radius: 35px;
@@ -364,6 +380,9 @@
             line-height: 1.4;
             animation: instructionPulse 4s infinite ease-in-out;
             border: 2px solid rgba(255,255,255,0.3);
+            text-align: center;
+            max-width: 90%;
+            transition: all 0.8s ease;
         }
 
         @keyframes instructionPulse {
@@ -375,12 +394,14 @@
             display: flex;
             justify-content: center;
             margin-top: clamp(25px, 6vw, 50px);
-            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-size: clamp(2rem, 6vw, 3.5rem);
             color: #ff4081;
             gap: clamp(15px, 4vw, 30px);
             position: relative;
             z-index: 10;
             flex-wrap: wrap;
+            width: 100%;
+            transition: all 0.8s ease;
         }
         
         .flower {
@@ -418,17 +439,17 @@
         
         .seal {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: clamp(45px, 8vw, 70px);
-            height: clamp(45px, 8vw, 70px);
+            bottom: 15px;
+            right: 15px;
+            width: clamp(35px, 8vw, 70px);
+            height: clamp(35px, 8vw, 70px);
             background: linear-gradient(145deg, #f06292, #ec407a);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-size: clamp(1rem, 2.5vw, 2rem);
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 4;
             border: 2px solid rgba(255,255,255,0.3);
@@ -465,15 +486,15 @@
             font-style: italic;
             font-weight: bold;
             color: #d81b60;
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
         }
         
         /* Tối ưu cho iPhone notch */
         @supports (padding: max(0px)) {
             .container {
-                padding-left: max(20px, env(safe-area-inset-left));
-                padding-right: max(20px, env(safe-area-inset-right));
-                padding-bottom: max(20px, env(safe-area-inset-bottom));
+                padding-left: max(15px, env(safe-area-inset-left));
+                padding-right: max(15px, env(safe-area-inset-right));
+                padding-bottom: max(15px, env(safe-area-inset-bottom));
             }
         }
         
@@ -496,6 +517,26 @@
             .heart {
                 font-size: clamp(2.5rem, 3vw, 4rem);
             }
+            
+            .heart-1 {
+                top: 25px;
+                left: 60px;
+            }
+            
+            .heart-2 {
+                top: 45px;
+                right: 80px;
+            }
+            
+            .heart-3 {
+                bottom: 35px;
+                left: 85px;
+            }
+            
+            .seal {
+                bottom: 20px;
+                right: 20px;
+            }
         }
         
         /* Landscape mode */
@@ -513,28 +554,91 @@
             .instruction {
                 margin-top: 20px;
             }
+            
+            .envelope-wrapper {
+                width: clamp(250px, 50vw, 400px);
+                height: clamp(180px, 35vw, 280px);
+            }
+            
+            .letter {
+                height: clamp(150px, 32vw, 220px);
+            }
+            
+            .envelope-wrapper.open .letter {
+                transform: translateY(-120px);
+            }
         }
         
         /* iPhone màn hình nhỏ hơn */
         @media (max-width: 350px) {
             .envelope-wrapper {
-                width: 300px;
-                height: 210px;
+                width: 260px;
+                height: 185px;
             }
             
             .letter {
-                height: 170px;
-                padding: 15px;
+                height: 150px;
+                padding: 12px;
             }
             
             .envelope-wrapper.open .letter {
-                transform: translateY(-150px);
+                transform: translateY(-130px);
             }
             
             h1 {
                 font-size: 1.8rem;
                 padding: 10px 20px;
             }
+            
+            .heart-1 {
+                top: 10px;
+                left: 30px;
+            }
+            
+            .heart-2 {
+                top: 20px;
+                right: 35px;
+            }
+            
+            .heart-3 {
+                bottom: 15px;
+                left: 40px;
+            }
+        }
+        
+        /* Điện thoại rất nhỏ */
+        @media (max-width: 320px) {
+            .envelope-wrapper {
+                width: 240px;
+                height: 170px;
+            }
+            
+            .letter {
+                height: 140px;
+                padding: 10px;
+            }
+            
+            .envelope-wrapper.open .letter {
+                transform: translateY(-120px);
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+                padding: 8px 16px;
+            }
+        }
+        
+        /* Khi phong thư mở - đẩy tiêu đề lên trên cao */
+        .envelope-open .title-container {
+            transform: translateY(-150px);
+        }
+        
+        .envelope-open .instruction {
+            transform: translateY(-120px);
+        }
+        
+        .envelope-open .flowers {
+            transform: translateY(-100px);
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -553,8 +657,10 @@
         </div>
     </div>
     
-    <div class="container">
-        <h1>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</h1>
+    <div class="container" id="mainContainer">
+        <div class="title-container">
+            <h1>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</h1>
+        </div>
         
         <div class="envelope-wrapper" id="envelopeWrapper">
             <div class="envelope">
@@ -594,16 +700,21 @@ Chúc em có một ngày thật đặc biệt và ý nghĩa 🌸</p>
 
     <script>
         document.getElementById('envelopeWrapper').addEventListener('click', function() {
-            this.classList.toggle('open');
+            const isOpen = this.classList.toggle('open');
+            const mainContainer = document.getElementById('mainContainer');
             
             // Đổi hướng dẫn sau khi mở thiệp
             const instruction = document.querySelector('.instruction');
-            if (this.classList.contains('open')) {
+            if (isOpen) {
                 instruction.textContent = 'Chạm vào phong thư để đóng thiệp';
                 instruction.style.background = 'rgba(248, 187, 208, 0.9)';
+                // Thêm class để đẩy các phần tử lên trên
+                mainContainer.classList.add('envelope-open');
             } else {
                 instruction.textContent = 'Chạm vào phong thư để mở thiệp';
                 instruction.style.background = 'rgba(255,255,255,0.85)';
+                // Xóa class để trở về vị trí ban đầu
+                mainContainer.classList.remove('envelope-open');
             }
         });
         
